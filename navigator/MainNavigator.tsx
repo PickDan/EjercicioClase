@@ -6,21 +6,22 @@ import BienvenidaScreen from '../screens/BienvenidaScreen';
 import ListaProductos from '../screens/ListaProductos';
 import RegistroProductos from '../screens/RegistroProductos';
 import Integrantes from '../screens/Integrantes';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Tab=createBottomTabNavigator();
 const Stack=createStackNavigator();
 
-export default function MainNavigator() {
-  return (
-    <Tab.Navigator>
-        <Tab.Screen name = "Bienvenida" component={BienvenidaScreen}/>
-        <Tab.Screen name = "Lista de Productos" component={ListaProductos}/>
-        <Tab.Screen name = "Registro de productos" component={RegistroProductos}/>
-        <Tab.Screen name = "Integrantes" component={Integrantes}/>
-
-    </Tab.Navigator>
-  )
-}
+function MyTabs() {
+    return (
+      <Tab.Navigator>
+          <Tab.Screen name = "Bienvenida" component={BienvenidaScreen}/>
+          <Tab.Screen name = "Lista de Productos" component={ListaProductos}/>
+          <Tab.Screen name = "Registro de productos" component={RegistroProductos}/>
+          <Tab.Screen name = "Integrantes" component={Integrantes}/>
+  
+      </Tab.Navigator>
+    )
+  }
 
 function MyStack(){
     return(
@@ -29,5 +30,11 @@ function MyStack(){
         </Stack.Navigator>
     )
 }
-
+export default function MainNavigator() {
+    return (
+        <NavigationContainer>
+            <MyStack/>
+        </NavigationContainer>
+    )
+  }
 const styles = StyleSheet.create({})
