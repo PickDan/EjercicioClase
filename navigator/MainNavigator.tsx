@@ -27,6 +27,7 @@ function MyStack(){
     return(
         <Stack.Navigator>
             <Stack.Screen name = 'Bienvenida' component={BienvenidaScreen}/>
+            <Stack.Screen name='Tab' component={MyTabs}/>
         </Stack.Navigator>
     )
 }
